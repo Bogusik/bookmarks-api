@@ -10,5 +10,15 @@ services:
       POSTGRES_DB: test
     networks:
       - bookmarksnet
+  test-db:
+    image: postgres:13
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    networks:
+      - bookmarksnet
 networks:
   bookmarksnet:
